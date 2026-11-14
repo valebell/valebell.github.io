@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="assets/site.css">
   <link rel="preload" href="assets/noto-thai.ttf" as="font" type="font/ttf" crossorigin>
   <script src="assets/demo.js" defer></script>
-  <script src="assets/previews.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -100,28 +99,24 @@
           </div>
         </div>
         <div class="app-previews">
-          <figure class="app-preview" data-app-preview>
-            <video id="practice-preview" width="540" height="1100" controls muted playsinline loop preload="none"
-              poster="assets/maa-normal-practice.jpg" data-preview-name="first lesson and Ink"
-              aria-label="Maa’s first lesson reveals letters in blank keys and uses them to type the first word. Later in the course, Shift sweeps ink across a partly discovered keyboard.">
-              <source src="assets/maa-normal-practice.mp4" type="video/mp4">
-            </video>
-            <figcaption>
-              <span>First lesson + Ink</span>
-              <button type="button" data-preview-toggle="play" hidden aria-controls="practice-preview" aria-label="Play first lesson and Ink preview" title="Play first lesson and Ink preview"></button>
-            </figcaption>
-          </figure>
-          <figure class="app-preview" data-app-preview>
-            <video id="speed-preview" width="540" height="1100" controls muted playsinline loop preload="none"
-              poster="assets/maa-speed-test.jpg" data-preview-name="speed test"
-              aria-label="Speed test in Maa: type timed Thai words and see a results chart for speed and accuracy.">
-              <source src="assets/maa-speed-test.mp4" type="video/mp4">
-            </video>
-            <figcaption>
-              <span>Later: speed test</span>
-              <button type="button" data-preview-toggle="play" hidden aria-controls="speed-preview" aria-label="Play speed test preview" title="Play speed test preview"></button>
-            </figcaption>
-          </figure>
+          <div class="preview-cards">
+            <figure class="app-preview">
+              <div class="preview-art preview-art--ink" aria-hidden="true">
+                <div class="preview-keys thai" lang="th">
+                  <span></span><span>ม</span><span></span>
+                  <span class="preview-key--gold">า</span><span></span><span></span>
+                </div>
+              </div>
+              <figcaption>First lesson + Ink</figcaption>
+            </figure>
+            <figure class="app-preview">
+              <div class="preview-art preview-art--speed" aria-hidden="true">
+                <div class="preview-timer"><span>00:30</span></div>
+              </div>
+              <figcaption>Speed test</figcaption>
+            </figure>
+          </div>
+          <p class="preview-note">Videos available at launch.</p>
         </div>
       </div>
     </section>
