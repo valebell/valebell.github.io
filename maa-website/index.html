@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e6">
+  <title>Maa · Learn Thai by typing</title>
+  <meta name="description" content="Discover the Thai keyboard one letter at a time. Learn real words and everyday phrases with Maa, a Thai typing practice app.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Maa · Learn Thai by typing">
+  <meta property="og:description" content="Discover the Thai keyboard one letter at a time. Type real words and build up to everyday phrases.">
+  <meta property="og:image" content="https://valentinbell.dev/maa-website/assets/maa-social.jpg">
+  <meta property="og:image:alt" content="Maa: Learn Thai by typing. A preview of the Thai keyboard in the app.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/maa-icon.png" type="image/png">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="preload" href="assets/noto-thai.ttf" as="font" type="font/ttf" crossorigin>
+  <script src="assets/demo.js" defer></script>
+  <script src="assets/previews.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="./" aria-label="Maa home">
+        <img src="assets/maa-icon.png" width="36" height="36" alt="">
+        <span>Maa</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#how-it-works">Inside Maa</a>
+        <a href="support.html">Support</a>
+      </nav>
+      <a class="header-cta" href="#availability">Availability <span aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Learn Thai<br>by <em>typing.</em></h1>
+        <p class="hero-description">Start with a few keys. Type your first Thai word and discover more of the keyboard as you learn.</p>
+        <a class="hero-action" href="#demo">Type your first word <span aria-hidden="true">↓</span></a>
+      </div>
+
+      <section class="demo" id="demo" tabindex="-1" aria-labelledby="demo-title">
+        <div class="demo-top">
+          <h2 id="demo-title">Try typing in Thai</h2>
+          <span class="demo-progress" data-demo-progress>Word 1 of 3</span>
+        </div>
+        <div class="specimen">
+          <div class="specimen-letter">
+            <div class="specimen-rules" aria-hidden="true"><span></span><span></span><span></span></div>
+            <p class="demo-word thai" lang="th" data-demo-word>มา</p>
+          </div>
+          <dl class="specimen-notes">
+            <div><dt>Reading</dt><dd data-demo-reading>māa</dd></div>
+            <div><dt>Meaning</dt><dd data-demo-meaning>to come</dd></div>
+          </dl>
+        </div>
+        <div class="demo-tray">
+          <div class="demo-feedback">
+            <div class="demo-slots" data-demo-slots aria-hidden="true"><span></span><span></span></div>
+            <p class="demo-status" data-demo-status aria-live="polite" aria-atomic="true">Tap the highlighted key to begin.</p>
+          </div>
+          <div class="demo-board" data-demo-board role="group" aria-label="Thai practice keys">
+            <button type="button" data-demo-key value="ม" lang="th" class="is-target" disabled>ม</button>
+            <button type="button" data-demo-key value="า" lang="th" disabled>า</button>
+            <button type="button" data-demo-key value="ด" lang="th" disabled>ด</button>
+            <button type="button" data-demo-key value="ก" lang="th" disabled>ก</button>
+            <button type="button" data-demo-key value="น" lang="th" disabled>น</button>
+            <button type="button" data-demo-key value="ี" lang="th" disabled>◌ี</button>
+            <button type="button" data-demo-key value="ส" lang="th" disabled>ส</button>
+            <button type="button" data-demo-key value="ว" lang="th" disabled>ว</button>
+          </div>
+          <div class="demo-actions">
+            <button type="button" class="demo-next" data-demo-next disabled>Skip word</button>
+          </div>
+          <noscript><p class="demo-noscript">Enable JavaScript to try the typing exercise.</p></noscript>
+        </div>
+      </section>
+    </section>
+
+    <section class="learning" id="how-it-works" aria-labelledby="learning-title">
+      <div class="shell learning-inner">
+        <div class="learning-copy">
+          <h2 id="learning-title">From letters<br>to <em>sentences.</em></h2>
+          <div class="learning-details">
+            <div>
+              <h3>Find the letters</h3>
+              <p>The keyboard starts with blank keys. Tap the gold key to reveal your first letter, then put the letters you know together to spell words and fill in everyday sentences.</p>
+            </div>
+            <div>
+              <h3>Keep the words</h3>
+              <p>Each word you learn goes into your vocabulary list, with its meaning, reading, and examples. Listen when Thai speech is available on your device.</p>
+            </div>
+            <div>
+              <h3>Make the keyboard yours</h3>
+              <p>Discover more characters in the full course to unlock three keyboard styles: Ink, Light, and Jigsaw.</p>
+            </div>
+          </div>
+        </div>
+        <div class="app-previews">
+          <figure class="app-preview" data-app-preview>
+            <video id="practice-preview" width="540" height="1100" controls muted playsinline loop preload="none"
+              poster="assets/maa-normal-practice.jpg" data-preview-name="first lesson and Ink"
+              aria-label="Maa’s first lesson reveals letters in blank keys and uses them to type the first word. Later in the course, Shift sweeps ink across a partly discovered keyboard.">
+              <source src="assets/maa-normal-practice.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+              <span>First lesson + Ink</span>
+              <button type="button" data-preview-toggle="play" hidden aria-controls="practice-preview" aria-label="Play first lesson and Ink preview" title="Play first lesson and Ink preview"></button>
+            </figcaption>
+          </figure>
+          <figure class="app-preview" data-app-preview>
+            <video id="speed-preview" width="540" height="1100" controls muted playsinline loop preload="none"
+              poster="assets/maa-speed-test.jpg" data-preview-name="speed test"
+              aria-label="Speed test in Maa: type timed Thai words and see a results chart for speed and accuracy.">
+              <source src="assets/maa-speed-test.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+              <span>Later: speed test</span>
+              <button type="button" data-preview-toggle="play" hidden aria-controls="speed-preview" aria-label="Play speed test preview" title="Play speed test preview"></button>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="story shell" aria-labelledby="story-title">
+      <h2 id="story-title">Why I built Maa</h2>
+      <div class="story-copy">
+        <p>The language apps I tried didn’t help me remember the Thai letters. I wanted something I’d use myself, so I built Maa around typing real words, a few letters at a time.</p>
+        <p class="story-author">Valentin Bell, developer of Maa</p>
+      </div>
+    </section>
+
+    <section class="availability shell" id="availability" aria-labelledby="availability-title">
+      <div class="availability-intro" id="android">
+        <img src="assets/maa-icon.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+        <h2 id="availability-title">Get Maa</h2>
+      </div>
+      <div class="availability-copy">
+        <p>The opening lessons and their review exercises are free. A one-time purchase unlocks the rest of the course. The app supports English and French.</p>
+        <div class="store-badges" role="group" aria-label="App availability">
+          <figure class="store-badge">
+            <figcaption>Coming soon</figcaption>
+            <img class="store-badge-apple" src="assets/app-store-badge.png" width="479" height="160" alt="App Store">
+          </figure>
+          <figure class="store-badge">
+            <figcaption>Coming soon</figcaption>
+            <img class="store-badge-google" src="assets/google-play-badge.png" width="646" height="250" alt="Google Play">
+          </figure>
+        </div>
+        <a class="text-link" href="support.html">App support <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <a class="brand" href="./" aria-label="Maa home"><span>Maa</span></a>
+      <nav aria-label="Footer">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
