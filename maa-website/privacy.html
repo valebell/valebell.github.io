@@ -3,72 +3,88 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="How Maa for Android and the Maa website handle learning progress, purchases, and support inquiries.">
-  <meta name="theme-color" content="#faf7f0">
-  <title>Privacy Policy · Maa</title>
+  <meta name="description" content="How Maa for Android and the Maa website handle learning progress, purchases, and support inquiries." data-i18n-content="privacy.description">
+  <meta name="theme-color" content="#f5f1e6" media="(prefers-color-scheme: light)" data-theme-color="light">
+  <meta name="theme-color" content="#26221b" media="(prefers-color-scheme: dark)" data-theme-color="dark">
+  <title data-i18n="privacy.title">Privacy Policy · Maa</title>
   <link rel="icon" href="assets/maa-icon.png" type="image/png">
+  <script src="assets/site-preferences.js"></script>
   <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site-copy.js" defer></script>
 </head>
 <body class="document-page">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="brand" href="./" aria-label="Maa home">
+      <a class="brand" href="./" aria-label="Maa home" data-i18n-aria-label="common.homeLabel">
         <img src="assets/maa-icon.png" width="38" height="38" alt="">
         <span>Maa</span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="./#how-it-works">How it works</a>
-        <a href="support.html">Support</a>
+      <nav class="site-nav" aria-label="Main navigation" data-i18n-aria-label="common.mainNav">
+        <a href="./#how-it-works" data-i18n="common.howItWorks">How it works</a>
+        <a href="support.html" data-i18n="common.support">Support</a>
       </nav>
-      <a class="header-cta" href="./#availability">Availability <span aria-hidden="true">↓</span></a>
+      <a class="header-cta" href="./#availability"><span data-i18n="common.availability">Availability</span> <span aria-hidden="true">↓</span></a>
+      <div class="site-preferences" hidden>
+        <select data-site-language aria-label="Language" data-i18n-aria-label="common.language">
+          <option value="auto" data-i18n="common.automaticLanguage">Browser language</option>
+          <option value="en" lang="en">English</option>
+          <option value="fr" lang="fr">Français</option>
+          <option value="ja" lang="ja">日本語</option>
+        </select>
+        <select data-site-theme aria-label="Appearance" data-i18n-aria-label="common.appearance">
+          <option value="system" data-i18n="common.systemTheme">System theme</option>
+          <option value="light" data-i18n="common.lightTheme">Light</option>
+          <option value="dark" data-i18n="common.darkTheme">Dark</option>
+        </select>
+      </div>
     </div>
   </header>
 
   <main id="main" class="shell document">
     <div class="document-intro">
-      <p class="eyebrow">Maa for Android</p>
-      <h1>Privacy Policy</h1>
-      <p>How Maa handles your progress, purchases, and support requests.</p>
-      <p><small>Last updated <time datetime="2026-11-14">14 November 2026</time></small></p>
+      <p class="eyebrow" data-i18n="common.android">Maa for Android</p>
+      <h1 data-i18n="privacy.heading">Privacy Policy</h1>
+      <p data-i18n="privacy.intro">How Maa handles your progress, purchases, and support requests.</p>
+      <p><small data-i18n="common.lastUpdated">Last updated <time datetime="2026-11-14" data-i18n="privacy.date">14 November 2026</time></small></p>
     </div>
 
     <article class="doc-content">
-      <h2>Learning data</h2>
-      <p>Maa is a Thai typing app developed by Valentin Bell. It does not require a Maa account. The app saves lesson activity in its private Android storage to resume practice, choose what to review, and show your progress. This includes the letters you type in exercises, their timing and accuracy, learned letters and words, session history, and app settings. Maa does not send this progress to a developer-operated server.</p>
+      <h2 data-i18n="privacy.learningHeading">Learning data</h2>
+      <p data-i18n="privacy.learning">Maa is a Thai typing app developed by Valentin Bell. It does not require a Maa account. The app saves lesson activity in its private Android storage to resume practice, choose what to review, and show your progress. This includes the letters you type in exercises, their timing and accuracy, learned letters and words, session history, and app settings. Maa does not send this progress to a developer-operated server.</p>
 
-      <h2>Android backup and transfer</h2>
-      <p>Depending on your Android settings, the system may back up parts of your Maa data, including your progress and learning preferences, or transfer them when you set up another device. Your device and backup provider control the backup and restore process. See <a href="https://support.google.com/android/answer/2819582?hl=en">Android backup and restore</a> to manage your backups.</p>
+      <h2 data-i18n="privacy.backupHeading">Android backup and transfer</h2>
+      <p data-i18n="privacy.backup">Depending on your Android settings, the system may back up parts of your Maa data, including your progress and learning preferences, or transfer them when you set up another device. Your device and backup provider control the backup and restore process. See <a href="https://support.google.com/android/answer/2819582?hl=en" data-i18n="privacy.backupLink" data-i18n-href="privacy.backupUrl">Android backup and restore</a> to manage your backups.</p>
 
-      <h2>Pronunciation</h2>
-      <p>Maa sends Thai lesson text to your device’s text-to-speech engine to play pronunciation. Whether the engine uses the network depends on the engine and voice you choose in Android. That engine’s provider has its own privacy practices. Maa does not record your voice.</p>
+      <h2 data-i18n="privacy.audioHeading">Pronunciation</h2>
+      <p data-i18n="privacy.audio">Maa sends Thai lesson text to your device’s text-to-speech engine to play pronunciation. Whether the engine uses the network depends on the engine and voice you choose in Android. That engine’s provider has its own privacy practices. Maa does not record your voice.</p>
 
-      <h2>Purchases</h2>
-      <p>Google Play handles the optional full course purchase. Maa checks purchase status through Google Play and saves signed purchase information on your device so it can verify access when you are offline. Google Play processes payment details. See <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.</p>
+      <h2 data-i18n="privacy.purchasesHeading">Purchases</h2>
+      <p data-i18n="privacy.purchases">Google Play handles the optional full course purchase. Maa checks purchase status through Google Play and saves signed purchase information on your device so it can verify access when you are offline. Google Play processes payment details. See <a href="https://policies.google.com/privacy" data-i18n="privacy.googlePolicy" data-i18n-href="privacy.googlePolicyUrl">Google’s Privacy Policy</a>.</p>
 
-      <h2>Retention and deletion</h2>
-      <p>Maa keeps the local learning data so you can pick up where you left off. To remove it, open Android <strong>Settings → Apps → Maa → Storage</strong> and choose <strong>Clear storage</strong> or <strong>Clear data</strong>. This removes local progress, saved restore points, and preferences. The in-app <strong>Reset progress</strong> action keeps a restore point. Manage any Android backups separately. Purchase records held by Google Play are managed through your Google account.</p>
+      <h2 data-i18n="privacy.retentionHeading">Retention and deletion</h2>
+      <p data-i18n="privacy.retention">Maa keeps the local learning data so you can pick up where you left off. To remove it, open Android <strong data-i18n="common.androidStorage">Settings → Apps → Maa → Storage</strong> and choose <strong data-i18n="common.clearStorage">Clear storage</strong> or <strong data-i18n="common.clearData">Clear data</strong>. This removes local progress, saved restore points, and preferences. The in-app <strong data-i18n="privacy.resetProgress">Reset progress</strong> action keeps a restore point. Manage any Android backups separately. Purchase records held by Google Play are managed through your Google account.</p>
 
-      <h2>Website and support</h2>
-      <p>The website’s typing example runs in your browser and resets when you reload the page. Maa does not receive your practice input. The site does not add tracking cookies or analytics. When you visit a site hosted on GitHub Pages, GitHub logs your IP address for security. See the <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages data collection notice</a>.</p>
-      <p>If you contact support, Maa uses your email address and the details you provide to understand and respond to your request. Support messages may be kept as needed to resolve and follow up on your request or meet legal obligations. Please leave out payment details and other sensitive information.</p>
+      <h2 data-i18n="privacy.websiteHeading">Website and support</h2>
+      <p data-i18n="privacy.website">The website’s typing example runs in your browser and resets when you reload the page. Maa does not receive your practice input. The site can save your language and appearance choices in your browser for your next visit. The site does not add tracking cookies or analytics. When you visit a site hosted on GitHub Pages, GitHub logs your IP address for security. See the <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection" data-i18n="privacy.githubNotice">GitHub Pages data collection notice</a>.</p>
+      <p data-i18n="privacy.support">If you contact support, Maa uses your email address and the details you provide to understand and respond to your request. Support messages may be kept as needed to resolve and follow up on your request or meet legal obligations. Please leave out payment details and other sensitive information.</p>
 
-      <h2>Privacy questions</h2>
-      <p>For privacy questions or requests about information you shared with Maa, email the developer at <a href="mailto:contact@valentinbell.dev">contact@valentinbell.dev</a>.</p>
+      <h2 data-i18n="privacy.questionsHeading">Privacy questions</h2>
+      <p data-i18n="privacy.questions">For privacy questions or requests about information you shared with Maa, email the developer at <a href="mailto:contact@valentinbell.dev">contact@valentinbell.dev</a>.</p>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="shell footer-inner">
-      <a class="brand" href="./" aria-label="Maa home">
+      <a class="brand" href="./" aria-label="Maa home" data-i18n-aria-label="common.homeLabel">
         <img src="assets/maa-icon.png" width="34" height="34" alt="">
         <span>Maa</span>
       </a>
-      <p>Learn Thai by typing.</p>
-      <nav aria-label="Footer">
-        <a href="privacy.html" aria-current="page">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="support.html">Support</a>
+      <p data-i18n="common.tagline">Learn Thai by typing.</p>
+      <nav aria-label="Footer" data-i18n-aria-label="common.footerNav">
+        <a href="privacy.html" aria-current="page" data-i18n="common.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="common.terms">Terms</a>
+        <a href="support.html" data-i18n="common.support">Support</a>
       </nav>
     </div>
   </footer>

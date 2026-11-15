@@ -3,64 +3,80 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Get help with Maa, Thai audio, learning progress, and Google Play purchases.">
-  <meta name="theme-color" content="#faf7f0">
-  <title>Support · Maa</title>
+  <meta name="description" content="Get help with Maa, Thai audio, learning progress, and Google Play purchases." data-i18n-content="support.description">
+  <meta name="theme-color" content="#f5f1e6" media="(prefers-color-scheme: light)" data-theme-color="light">
+  <meta name="theme-color" content="#26221b" media="(prefers-color-scheme: dark)" data-theme-color="dark">
+  <title data-i18n="support.title">Support · Maa</title>
   <link rel="icon" href="assets/maa-icon.png" type="image/png">
+  <script src="assets/site-preferences.js"></script>
   <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site-copy.js" defer></script>
 </head>
 <body class="document-page">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="brand" href="./" aria-label="Maa home">
+      <a class="brand" href="./" aria-label="Maa home" data-i18n-aria-label="common.homeLabel">
         <img src="assets/maa-icon.png" width="38" height="38" alt="">
         <span>Maa</span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="./#how-it-works">How it works</a>
-        <a href="support.html" aria-current="page">Support</a>
+      <nav class="site-nav" aria-label="Main navigation" data-i18n-aria-label="common.mainNav">
+        <a href="./#how-it-works" data-i18n="common.howItWorks">How it works</a>
+        <a href="support.html" aria-current="page" data-i18n="common.support">Support</a>
       </nav>
-      <a class="header-cta" href="./#availability">Availability <span aria-hidden="true">↓</span></a>
+      <a class="header-cta" href="./#availability"><span data-i18n="common.availability">Availability</span> <span aria-hidden="true">↓</span></a>
+      <div class="site-preferences" hidden>
+        <select data-site-language aria-label="Language" data-i18n-aria-label="common.language">
+          <option value="auto" data-i18n="common.automaticLanguage">Browser language</option>
+          <option value="en" lang="en">English</option>
+          <option value="fr" lang="fr">Français</option>
+          <option value="ja" lang="ja">日本語</option>
+        </select>
+        <select data-site-theme aria-label="Appearance" data-i18n-aria-label="common.appearance">
+          <option value="system" data-i18n="common.systemTheme">System theme</option>
+          <option value="light" data-i18n="common.lightTheme">Light</option>
+          <option value="dark" data-i18n="common.darkTheme">Dark</option>
+        </select>
+      </div>
     </div>
   </header>
 
   <main id="main" class="shell document">
     <div class="document-intro">
-      <p class="eyebrow">Help with Maa</p>
-      <h1>Support</h1>
-      <p>Find your progress, restore the full course, or get Thai audio working.</p>
+      <p class="eyebrow" data-i18n="support.eyebrow">Help with Maa</p>
+      <h1 data-i18n="common.support">Support</h1>
+      <p data-i18n="support.intro">Find your progress, restore the full course, or get Thai audio working.</p>
     </div>
 
     <article class="doc-content">
-      <h2>How do I restore the full course?</h2>
-      <p>Open Maa’s <strong>Full course</strong> screen from Settings or Vocabulary. Connect to the internet, confirm that the Google Play Store is using the account that made the purchase, and tap <strong>Restore purchase</strong>. For refunds or payment problems, see <a href="https://support.google.com/googleplay/answer/2479637?hl=en">Google Play purchase and refund help</a>.</p>
+      <h2 data-i18n="support.purchaseHeading">How do I restore the full course?</h2>
+      <p data-i18n="support.purchase">Open Maa’s <strong data-i18n="common.fullCourse">Full course</strong> screen from Settings or Vocabulary. Connect to the internet, confirm that the Google Play Store is using the account that made the purchase, and tap <strong data-i18n="common.restorePurchase">Restore purchase</strong>. For refunds or payment problems, see <a href="https://support.google.com/googleplay/answer/2479637?hl=en" data-i18n="support.refundHelp" data-i18n-href="common.refundUrl">Google Play purchase and refund help</a>.</p>
 
-      <h2>Why can’t I hear pronunciation?</h2>
-      <p>When Maa reports that Thai audio is unavailable, tap <strong>Help</strong> and open <strong>Speech settings</strong>. Install or enable a Thai voice in Android’s text-to-speech settings. Return to Maa and tap <strong>Try again</strong>. You can keep practising without sound while you set it up.</p>
+      <h2 data-i18n="support.audioHeading">Why can’t I hear pronunciation?</h2>
+      <p data-i18n="support.audio">When Maa reports that Thai audio is unavailable, tap <strong data-i18n="support.audioHelp">Help</strong> and open <strong data-i18n="support.speechSettings">Speech settings</strong>. Install or enable a Thai voice in Android’s text-to-speech settings. Return to Maa and tap <strong data-i18n="support.tryAgain">Try again</strong>. You can keep practising without sound while you set it up.</p>
 
-      <h2>Will my progress move to a new device?</h2>
-      <p>Maa saves progress on your device. Android may restore it if you have an eligible backup or use a device-to-device transfer. Check your Android backup settings before switching devices. If you reset your progress inside Maa, <strong>Settings → Restore previous progress</strong> can recover the most recent in-app restore point.</p>
+      <h2 data-i18n="support.progressHeading">Will my progress move to a new device?</h2>
+      <p data-i18n="support.progress">Maa saves progress on your device. Android may restore it if you have an eligible backup or use a device-to-device transfer. Check your Android backup settings before switching devices. If you reset your progress inside Maa, <strong data-i18n="support.restoreProgress">Settings → Restore previous progress</strong> can recover the most recent in-app restore point.</p>
 
-      <h2>How do I erase my data?</h2>
-      <p>Use Android <strong>Settings → Apps → Maa → Storage → Clear storage</strong> or <strong>Clear data</strong>. This removes progress, preferences, and the in-app restore point from that device. See the <a href="privacy.html">Privacy Policy</a> for what Android can back up.</p>
+      <h2 data-i18n="support.dataHeading">How do I erase my data?</h2>
+      <p data-i18n="support.data">Use Android <strong data-i18n="support.clearStoragePath">Settings → Apps → Maa → Storage → Clear storage</strong> or <strong data-i18n="common.clearData">Clear data</strong>. This removes progress, preferences, and the in-app restore point from that device. See the <a href="privacy.html" data-i18n="privacy.heading">Privacy Policy</a> for what Android can back up.</p>
 
-      <h2>Contact Maa</h2>
-      <p>Email the developer at <a href="mailto:contact@valentinbell.dev">contact@valentinbell.dev</a>. For a bug report, include your Android version, Maa version, and the steps that led to the problem. Leave out passwords and payment information.</p>
+      <h2 data-i18n="support.contactHeading">Contact Maa</h2>
+      <p data-i18n="support.contact">Email the developer at <a href="mailto:contact@valentinbell.dev">contact@valentinbell.dev</a>. For a bug report, include your Android version, Maa version, and the steps that led to the problem. Leave out passwords and payment information.</p>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="shell footer-inner">
-      <a class="brand" href="./" aria-label="Maa home">
+      <a class="brand" href="./" aria-label="Maa home" data-i18n-aria-label="common.homeLabel">
         <img src="assets/maa-icon.png" width="34" height="34" alt="">
         <span>Maa</span>
       </a>
-      <p>Learn Thai by typing.</p>
-      <nav aria-label="Footer">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="support.html" aria-current="page">Support</a>
+      <p data-i18n="common.tagline">Learn Thai by typing.</p>
+      <nav aria-label="Footer" data-i18n-aria-label="common.footerNav">
+        <a href="privacy.html" data-i18n="common.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="common.terms">Terms</a>
+        <a href="support.html" aria-current="page" data-i18n="common.support">Support</a>
       </nav>
     </div>
   </footer>

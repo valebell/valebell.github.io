@@ -3,69 +3,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Terms for using Maa and buying the full Thai typing course through Google Play.">
-  <meta name="theme-color" content="#faf7f0">
-  <title>Terms of Use · Maa</title>
+  <meta name="description" content="Terms for using Maa and buying the full Thai typing course through Google Play." data-i18n-content="terms.description">
+  <meta name="theme-color" content="#f5f1e6" media="(prefers-color-scheme: light)" data-theme-color="light">
+  <meta name="theme-color" content="#26221b" media="(prefers-color-scheme: dark)" data-theme-color="dark">
+  <title data-i18n="terms.title">Terms of Use · Maa</title>
   <link rel="icon" href="assets/maa-icon.png" type="image/png">
+  <script src="assets/site-preferences.js"></script>
   <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site-copy.js" defer></script>
 </head>
 <body class="document-page">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="brand" href="./" aria-label="Maa home">
+      <a class="brand" href="./" aria-label="Maa home" data-i18n-aria-label="common.homeLabel">
         <img src="assets/maa-icon.png" width="38" height="38" alt="">
         <span>Maa</span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="./#how-it-works">How it works</a>
-        <a href="support.html">Support</a>
+      <nav class="site-nav" aria-label="Main navigation" data-i18n-aria-label="common.mainNav">
+        <a href="./#how-it-works" data-i18n="common.howItWorks">How it works</a>
+        <a href="support.html" data-i18n="common.support">Support</a>
       </nav>
-      <a class="header-cta" href="./#availability">Availability <span aria-hidden="true">↓</span></a>
+      <a class="header-cta" href="./#availability"><span data-i18n="common.availability">Availability</span> <span aria-hidden="true">↓</span></a>
+      <div class="site-preferences" hidden>
+        <select data-site-language aria-label="Language" data-i18n-aria-label="common.language">
+          <option value="auto" data-i18n="common.automaticLanguage">Browser language</option>
+          <option value="en" lang="en">English</option>
+          <option value="fr" lang="fr">Français</option>
+          <option value="ja" lang="ja">日本語</option>
+        </select>
+        <select data-site-theme aria-label="Appearance" data-i18n-aria-label="common.appearance">
+          <option value="system" data-i18n="common.systemTheme">System theme</option>
+          <option value="light" data-i18n="common.lightTheme">Light</option>
+          <option value="dark" data-i18n="common.darkTheme">Dark</option>
+        </select>
+      </div>
     </div>
   </header>
 
   <main id="main" class="shell document">
     <div class="document-intro">
-      <p class="eyebrow">Maa for Android</p>
-      <h1>Terms of Use</h1>
-      <p>How to use Maa and what the full course purchase includes.</p>
-      <p><small>Last updated <time datetime="2026-11-14">14 November 2026</time></small></p>
+      <p class="eyebrow" data-i18n="common.android">Maa for Android</p>
+      <h1 data-i18n="terms.heading">Terms of Use</h1>
+      <p data-i18n="terms.intro">How to use Maa and what the full course purchase includes.</p>
+      <p><small data-i18n="common.lastUpdated">Last updated <time datetime="2026-11-14" data-i18n="terms.date">14 November 2026</time></small></p>
     </div>
 
     <article class="doc-content">
-      <h2>Using Maa</h2>
-      <p>Maa is an educational app by Valentin Bell for practising Thai letters, words, and phrases. Use the lessons for your own learning and respect the rights of the people who made the course and app. You can start practising without a Maa account.</p>
+      <h2 data-i18n="terms.useHeading">Using Maa</h2>
+      <p data-i18n="terms.use">Maa is an educational app by Valentin Bell for practising Thai letters, words, and phrases. Use the lessons for your own learning and respect the rights of the people who made the course and app. You can start practising without a Maa account.</p>
 
-      <h2>Free lessons and the full course</h2>
-      <p>The opening lessons and ongoing review of the words and phrases they introduce are free. The remaining guided lessons are available through an optional one-time purchase. There is no subscription.</p>
+      <h2 data-i18n="terms.courseHeading">Free lessons and the full course</h2>
+      <p data-i18n="terms.course">The opening lessons and ongoing review of the words and phrases they introduce are free. The remaining guided lessons are available through an optional one-time purchase. There is no subscription.</p>
 
-      <h2>Buying and restoring the course</h2>
-      <p>Google Play shows the price and handles checkout. The purchase is associated with the Google Play account used at checkout. To restore access after reinstalling or changing Android devices, use the same Google Play account and choose <strong>Restore purchase</strong> on Maa’s <strong>Full course</strong> screen. Restoring a purchase restores access to the course. Restoring learning progress depends on Android backup and device transfer.</p>
-      <p>See <a href="https://support.google.com/googleplay/answer/2479637?hl=en">Google Play’s refund policy</a> for eligibility and how to request a refund. These terms do not limit any mandatory consumer rights.</p>
+      <h2 data-i18n="terms.purchasesHeading">Buying and restoring the course</h2>
+      <p data-i18n="terms.purchases">Google Play shows the price and handles checkout. The purchase is associated with the Google Play account used at checkout. To restore access after reinstalling or changing Android devices, use the same Google Play account and choose <strong data-i18n="common.restorePurchase">Restore purchase</strong> on Maa’s <strong data-i18n="common.fullCourse">Full course</strong> screen. Restoring a purchase restores access to the course. Restoring learning progress depends on Android backup and device transfer.</p>
+      <p data-i18n="terms.refunds">See <a href="https://support.google.com/googleplay/answer/2479637?hl=en" data-i18n="terms.refundPolicy" data-i18n-href="common.refundUrl">Google Play’s refund policy</a> for eligibility and how to request a refund. These terms do not limit any mandatory consumer rights.</p>
 
-      <h2>Availability</h2>
-      <p>Audio relies on Thai text-to-speech support on your Android device. You can continue practising without sound. Device support and store availability may vary.</p>
+      <h2 data-i18n="common.availability">Availability</h2>
+      <p data-i18n="terms.availability">Audio relies on Thai text-to-speech support on your Android device. You can continue practising without sound. Device support and store availability may vary.</p>
 
-      <h2>Questions</h2>
-      <p>See <a href="support.html">Maa Support</a> for purchase and app help. See the <a href="privacy.html">Privacy Policy</a> for how Maa handles your learning data.</p>
+      <h2 data-i18n="terms.questionsHeading">Questions</h2>
+      <p data-i18n="terms.questions">See <a href="support.html" data-i18n="home.appSupport">Maa Support</a> for purchase and app help. See the <a href="privacy.html" data-i18n="privacy.heading">Privacy Policy</a> for how Maa handles your learning data.</p>
 
-      <h2>Store trademarks</h2>
-      <p>Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+      <h2 data-i18n="terms.trademarksHeading">Store trademarks</h2>
+      <p data-i18n="terms.trademarks">Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="shell footer-inner">
-      <a class="brand" href="./" aria-label="Maa home">
+      <a class="brand" href="./" aria-label="Maa home" data-i18n-aria-label="common.homeLabel">
         <img src="assets/maa-icon.png" width="34" height="34" alt="">
         <span>Maa</span>
       </a>
-      <p>Learn Thai by typing.</p>
-      <nav aria-label="Footer">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html" aria-current="page">Terms</a>
-        <a href="support.html">Support</a>
+      <p data-i18n="common.tagline">Learn Thai by typing.</p>
+      <nav aria-label="Footer" data-i18n-aria-label="common.footerNav">
+        <a href="privacy.html" data-i18n="common.privacy">Privacy</a>
+        <a href="terms.html" aria-current="page" data-i18n="common.terms">Terms</a>
+        <a href="support.html" data-i18n="common.support">Support</a>
       </nav>
     </div>
   </footer>

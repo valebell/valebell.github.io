@@ -1,9 +1,65 @@
 function setupDemo(demo) {
     const words = [
-        { thai: 'มา', pronunciation: 'māa', meaning: 'to come' },
+        { thai: 'มา', pronunciation: 'māa', meaning: 'come' },
         { thai: 'ดี', pronunciation: 'dīi', meaning: 'good' },
         { thai: 'กา', pronunciation: 'gāa', meaning: 'crow' },
     ];
+    const translations = {
+        en: {
+            meanings: { come: 'to come', good: 'good', crow: 'crow' },
+            progress: (current, total) => `Word ${current} of ${total}`,
+            actions: {
+                skip: 'Skip word',
+                skipLast: 'Skip and start again',
+                next: 'Next word',
+                restart: 'Start again',
+            },
+            prompts: {
+                start: 'Start with {key}',
+                newWord: 'New word. Start with {key}',
+                wrong: 'Try this key: {key}',
+                nextLetter: 'Now type {key}',
+                complete: 'Word complete. Ready for the next word?',
+                completeLast: 'Word complete. Start again to replay.',
+            },
+        },
+        fr: {
+            meanings: { come: 'venir', good: 'bon', crow: 'corbeau' },
+            progress: (current, total) => `Mot ${current} sur ${total}`,
+            actions: {
+                skip: 'Passer ce mot',
+                skipLast: 'Passer et recommencer',
+                next: 'Mot suivant',
+                restart: 'Recommencer',
+            },
+            prompts: {
+                start: 'Commencez par la touche {key}',
+                newWord: 'Nouveau mot. Commencez par la touche {key}',
+                wrong: 'Essayez cette touche : {key}',
+                nextLetter: 'Tapez maintenant {key}',
+                complete: 'Mot terminé. Prêt pour le mot suivant ?',
+                completeLast: 'Mot terminé. Choisissez « Recommencer » pour rejouer.',
+            },
+        },
+        ja: {
+            meanings: { come: '来る', good: '良い', crow: 'カラス' },
+            progress: (current, total) => `${total}語中${current}語目`,
+            actions: {
+                skip: 'この単語をスキップ',
+                skipLast: 'スキップして最初から',
+                next: '次の単語',
+                restart: '最初から',
+            },
+            prompts: {
+                start: 'まず「{key}」を入力してください。',
+                newWord: '新しい単語です。まず「{key}」を入力してください。',
+                wrong: '「{key}」キーを押してください。',
+                nextLetter: '次は「{key}」を入力してください。',
+                complete: '入力できました。次の単語に進みましょう。',
+                completeLast: '入力できました。もう一度練習するには「最初から」を選んでください。',
+            },
+        },
+    };
     const word = demo.querySelector('[data-demo-word]');
     const reading = demo.querySelector('[data-demo-reading]');
     const meaning = demo.querySelector('[data-demo-meaning]');
@@ -17,6 +73,7 @@ function setupDemo(demo) {
     let wordIndex = 0;
     let letterIndex = 0;
     let letters = [];
+    let prompt = 'start';
     let mistakenKey;
     let mistakeTimer;
 
@@ -24,13 +81,35 @@ function setupDemo(demo) {
         return letter === 'ี' ? '◌ี' : letter;
     }
 
-    function announce(message, hint) {
-        status.textContent = message;
-        if (hint) {
+    function copy() {
+        const language = document.documentElement.lang;
+        return Object.hasOwn(translations, language) ? translations[language] : translations.en;
+    }
+
+    function isLastWord() {
+        return wordIndex === words.length - 1;
+    }
+
+    function renderLabels() {
+        const text = copy();
+        meaning.textContent = text.meanings[words[wordIndex].meaning];
+        progress.textContent = text.progress(wordIndex + 1, words.length);
+        if (letterIndex === letters.length) {
+            next.textContent = isLastWord() ? text.actions.restart : text.actions.next;
+        } else {
+            next.textContent = isLastWord() ? text.actions.skipLast : text.actions.skip;
+        }
+    }
+
+    function announce(message = prompt) {
+        prompt = message;
+        const [before, after] = copy().prompts[prompt].split('{key}');
+        status.textContent = before;
+        if (after !== undefined) {
             const thai = document.createElement('span');
             thai.lang = 'th';
-            thai.textContent = visibleLetter(hint);
-            status.append(' ', thai);
+            thai.textContent = visibleLetter(letters[letterIndex]);
+            status.append(thai, after);
         }
     }
 
@@ -53,9 +132,7 @@ function setupDemo(demo) {
             word.classList.add('is-new');
         }
         reading.textContent = current.pronunciation;
-        meaning.textContent = current.meaning;
-        progress.textContent = `Word ${wordIndex + 1} of ${words.length}`;
-        next.textContent = wordIndex === words.length - 1 ? 'Skip and start again' : 'Skip word';
+        renderLabels();
 
         slots.replaceChildren(...letters.map(() => {
             const slot = document.createElement('span');
@@ -69,7 +146,7 @@ function setupDemo(demo) {
             key.classList.remove('is-used');
             key.classList.toggle('is-target', letter === letters[0]);
         });
-        announce(animate ? 'New word. Start with' : 'Start with', letters[0]);
+        announce(animate ? 'newWord' : 'start');
     }
 
     function typeKey(key) {
@@ -84,7 +161,7 @@ function setupDemo(demo) {
             demo.classList.add('is-wrong');
             key.classList.add('is-wrong');
             mistakeTimer = setTimeout(clearMistake, 450);
-            announce('Try this key:', expected);
+            announce('wrong');
             return;
         }
 
@@ -97,15 +174,14 @@ function setupDemo(demo) {
 
         if (letterIndex < letters.length) {
             keys.get(letters[letterIndex]).classList.add('is-target');
-            announce('Now type', letters[letterIndex]);
+            announce('nextLetter');
             return;
         }
 
         demo.classList.add('is-complete');
         keys.forEach((letterKey) => letterKey.setAttribute('aria-disabled', 'true'));
-        const isLastWord = wordIndex === words.length - 1;
-        next.textContent = isLastWord ? 'Start again' : 'Next word';
-        announce(isLastWord ? 'Word complete. Start again to replay.' : 'Word complete. Ready for the next word?');
+        renderLabels();
+        announce(isLastWord() ? 'completeLast' : 'complete');
     }
 
     keys.forEach((key) => {
@@ -129,6 +205,10 @@ function setupDemo(demo) {
     });
 
     showWord();
+    document.addEventListener('maa:languagechange', () => {
+        renderLabels();
+        announce();
+    });
 }
 
 const demo = document.querySelector('#demo');
