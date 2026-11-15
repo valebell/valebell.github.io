@@ -57,7 +57,7 @@ window.maaSiteCopy = {
         'home.availabilityDescription': 'Les premières leçons et leurs exercices de révision sont gratuits. Un achat unique débloque le cours complet.',
         'home.appLanguages': 'L’application est disponible en anglais et en français.',
         'home.plannedStores': 'Boutiques prévues',
-        'home.appSupport': 'Assistance Maa',
+        'home.androidSupport': 'Assistance Android',
 
         'privacy.title': 'Politique de confidentialité · Maa',
         'privacy.description': 'Comment Maa pour Android et le site de Maa gèrent la progression, les achats et les demandes d’assistance.',
@@ -184,7 +184,7 @@ window.maaSiteCopy = {
         'home.availabilityDescription': '最初のレッスンと復習問題は無料です。1回の購入でコース全編を利用できます。',
         'home.appLanguages': 'アプリは英語とフランス語に対応しています。',
         'home.plannedStores': '配信予定のストア',
-        'home.appSupport': 'Maaのサポート',
+        'home.androidSupport': 'Androidのサポート',
 
         'privacy.title': 'プライバシーポリシー · Maa',
         'privacy.description': 'Android版MaaとMaaのウェブサイトにおける学習の進み具合、購入情報、お問い合わせの取り扱いについて。',
