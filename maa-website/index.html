@@ -15,10 +15,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/maa-icon.png" type="image/png">
   <script src="assets/site-preferences.js?v=theme-toggle"></script>
-  <link rel="stylesheet" href="assets/site.css?v=demo-next">
+  <link rel="stylesheet" href="assets/site.css?v=hero-typing">
   <link rel="preload" href="assets/noto-thai.ttf" as="font" type="font/ttf" crossorigin>
-  <script src="assets/site-copy.js?v=demo-first" defer></script>
+  <script src="assets/site-copy.js?v=hero-typing" defer></script>
   <script src="assets/demo.js?v=launch-status" defer></script>
+  <script src="assets/hero-typing.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
@@ -63,12 +64,9 @@
   <main id="main">
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title"><span data-i18n="home.heroTitleStart">Learn Thai</span><br><span data-i18n="home.heroTitleJoin">by </span><em data-i18n="home.heroTitleEnd">typing.</em></h1>
+        <h1 id="hero-title"><span data-i18n="home.heroTitleStart">Learn Thai</span><br><span data-i18n="home.heroTitleJoin">by </span><em class="hero-typing" data-hero-typing><span class="hero-typing-original" data-i18n="home.heroTitleEnd">typing.</span><span class="hero-typing-effect" lang="th" aria-hidden="true"><span data-hero-typing-text></span></span></em></h1>
         <p class="hero-description" data-i18n="home.heroDescription">Start with a few keys. Type your first Thai word and discover more of the keyboard as you learn.</p>
-        <div class="hero-actions">
-          <a class="hero-action" href="#demo"><span data-i18n="home.tryDemo">Try the demo</span> <span aria-hidden="true">↓</span></a>
-          <a class="hero-launch-link text-link" href="#availability" data-i18n="home.launchStatus">See launch status</a>
-        </div>
+        <a class="hero-action" href="#availability"><span data-i18n="home.launchStatus">See launch status</span> <span aria-hidden="true">↓</span></a>
       </div>
 
       <section class="demo" id="demo" tabindex="-1" aria-labelledby="demo-title">
