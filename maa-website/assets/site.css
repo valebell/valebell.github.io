@@ -374,9 +374,9 @@ p, h1, h2, h3, figure, dl, dd { margin: 0; }
 .demo-board button.is-target { background: var(--gold); color: var(--on-gold); border-color: #f6d892; }
 .demo-board button.is-used { color: #e4e9dc; border-color: #688071; background: #37463b; }
 .demo-board button.is-wrong { border-color: #f1ab8c; animation: shake .32s ease both; }
-.demo.is-finished .demo-board { opacity: .5; }
+.demo:is(.is-complete, .is-finished) .demo-board { opacity: .5; }
 .demo-actions { display: flex; justify-content: flex-end; }
-.demo.is-finished .demo-actions { flex-wrap: wrap; align-items: center; gap: .3rem .95rem; padding-block: .65rem .35rem; }
+.demo:is(.is-complete, .is-finished) .demo-actions { flex-wrap: wrap; align-items: center; gap: .3rem .95rem; padding-block: .65rem .35rem; }
 .demo-next {
   min-height: 44px;
   padding: 0 .1rem 0 .65rem;
@@ -388,7 +388,8 @@ p, h1, h2, h3, figure, dl, dd { margin: 0; }
   text-underline-offset: .24em;
   cursor: pointer;
 }
-.demo-next:hover:not(:disabled), .demo:is(.is-complete, .is-finished) .demo-next { text-decoration: underline; }
+.demo-next:hover:not(:disabled), .demo.is-finished .demo-next { text-decoration: underline; }
+.demo.is-complete:not(.is-finished) .demo-next,
 .demo-launch:not([hidden]) {
   display: inline-flex;
   align-items: center;
@@ -402,7 +403,7 @@ p, h1, h2, h3, figure, dl, dd { margin: 0; }
   font-weight: 700;
   text-decoration: none;
 }
-.demo-launch:hover { text-decoration: underline; text-underline-offset: .2em; }
+.demo.is-complete:not(.is-finished) .demo-next:hover, .demo-launch:hover { text-decoration: underline; text-underline-offset: .2em; }
 .demo-noscript { margin-bottom: .6rem; font-size: .78rem; }
 
 .learning { background: var(--learning-paper); border-block: 1px solid var(--learning-border); }
