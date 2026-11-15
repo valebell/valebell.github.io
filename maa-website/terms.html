@@ -8,9 +8,9 @@
   <meta name="theme-color" content="#26221b" media="(prefers-color-scheme: dark)" data-theme-color="dark">
   <title data-i18n="terms.title">Terms of Use · Maa</title>
   <link rel="icon" href="assets/maa-icon.png" type="image/png">
-  <script src="assets/site-preferences.js?v=header"></script>
-  <link rel="stylesheet" href="assets/site.css?v=header">
-  <script src="assets/site-copy.js?v=header" defer></script>
+  <script src="assets/site-preferences.js?v=theme-toggle"></script>
+  <link rel="stylesheet" href="assets/site.css?v=theme-toggle">
+  <script src="assets/site-copy.js?v=theme-toggle" defer></script>
 </head>
 <body class="document-page">
   <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
@@ -27,7 +27,7 @@
       <div class="header-actions" hidden>
         <div class="header-picker">
           <button class="header-icon" type="button" aria-controls="site-language" aria-expanded="false" aria-label="Language" data-i18n-aria-label="common.language" title="Language" data-i18n-title="common.language" data-header-toggle>
-            <svg width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=header#globe"></use></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=theme-toggle#globe"></use></svg>
           </button>
           <div class="header-panel language-panel" id="site-language" aria-labelledby="language-label" role="group" data-site-language>
             <p class="header-panel-label" id="language-label" data-i18n="common.language">Language</p>
@@ -40,32 +40,13 @@
             <label class="language-option"><input name="maa-language" type="radio" value="ja"><span lang="ja">日本語</span></label>
           </div>
         </div>
-        <div class="header-picker theme-picker">
-          <button class="header-icon theme-trigger" type="button" aria-controls="site-theme" aria-expanded="false" aria-label="Appearance" data-i18n-aria-label="common.appearance" title="Appearance" data-i18n-title="common.appearance" data-header-toggle>
-            <svg class="preference-icon--sun" width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=header#sun"></use></svg>
-            <svg class="preference-icon--moon" width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=header#moon"></use></svg>
-          </button>
-          <div class="header-panel theme-panel" id="site-theme" aria-labelledby="theme-label" role="group" data-site-theme>
-            <p class="header-panel-label" id="theme-label" data-i18n="common.appearance">Appearance</p>
-            <div class="theme-switcher">
-              <label class="theme-option" title="Light" data-i18n-title="common.lightTheme">
-                <input name="maa-theme" type="radio" value="light" aria-label="Light" data-i18n-aria-label="common.lightTheme">
-                <svg width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=header#sun"></use></svg>
-              </label>
-              <label class="theme-option" title="Dark" data-i18n-title="common.darkTheme">
-                <input name="maa-theme" type="radio" value="dark" aria-label="Dark" data-i18n-aria-label="common.darkTheme">
-                <svg width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=header#moon"></use></svg>
-              </label>
-              <label class="theme-option" title="System theme" data-i18n-title="common.systemTheme">
-                <input name="maa-theme" type="radio" value="system" aria-label="System theme" data-i18n-aria-label="common.systemTheme" checked>
-                <svg width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=header#monitor"></use></svg>
-              </label>
-            </div>
-          </div>
-        </div>
+        <button class="header-icon theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode" data-i18n-aria-label="common.darkMode" title="Dark mode" data-i18n-title="common.darkMode" data-site-theme>
+          <svg class="preference-icon--sun" width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=theme-toggle#sun"></use></svg>
+          <svg class="preference-icon--moon" width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=theme-toggle#moon"></use></svg>
+        </button>
         <button class="header-icon site-nav-trigger" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu" data-i18n-aria-label="common.menu" title="Menu" data-i18n-title="common.menu" data-header-toggle>
-          <svg class="site-nav-icon--menu" width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=header#menu"></use></svg>
-          <svg class="site-nav-icon--close" width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=header#close"></use></svg>
+          <svg class="site-nav-icon--menu" width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=theme-toggle#menu"></use></svg>
+          <svg class="site-nav-icon--close" width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg?v=theme-toggle#close"></use></svg>
         </button>
       </div>
     </div>

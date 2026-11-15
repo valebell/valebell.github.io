@@ -25,8 +25,6 @@
   --rule: #bcb29d;
   --rule-soft: #d7cebc;
   --control-hover: #eae2d1;
-  --sun-icon: block;
-  --moon-icon: none;
   --gold: #edc573;
   --gold-ink: #765018;
   --green: #355341;
@@ -58,8 +56,6 @@
   --rule: #756954;
   --rule-soft: #514938;
   --control-hover: #383127;
-  --sun-icon: none;
-  --moon-icon: block;
   --gold-ink: #edc573;
   --green: #b4cba9;
   --action-accent: #26221b;
@@ -84,8 +80,6 @@
     --rule: #756954;
     --rule-soft: #514938;
     --control-hover: #383127;
-    --sun-icon: none;
-    --moon-icon: block;
     --gold-ink: #edc573;
     --green: #b4cba9;
     --action-accent: #26221b;
@@ -174,7 +168,7 @@ p, h1, h2, h3, figure, dl, dd { margin: 0; }
   color: var(--ink);
   cursor: pointer;
 }
-.header-icon, .site-nav a, .language-option, .theme-option { -webkit-tap-highlight-color: transparent; }
+.header-icon, .site-nav a, .language-option { -webkit-tap-highlight-color: transparent; }
 .header-icon:hover, .header-icon[aria-expanded="true"] { background: var(--control-hover); }
 .header-actions svg {
   fill: none;
@@ -184,9 +178,11 @@ p, h1, h2, h3, figure, dl, dd { margin: 0; }
   stroke-linejoin: round;
   pointer-events: none;
 }
-.preference-icon--sun { display: var(--sun-icon); }
-.preference-icon--moon { display: var(--moon-icon); }
-.site-nav-trigger, .theme-trigger,
+.theme-toggle svg { grid-area: 1 / 1; transition: opacity .16s ease, transform .24s ease; }
+.theme-toggle .preference-icon--moon { opacity: 0; transform: rotate(-65deg) scale(.35); }
+.theme-toggle[aria-pressed="true"] .preference-icon--sun { opacity: 0; transform: rotate(65deg) scale(.35); }
+.theme-toggle[aria-pressed="true"] .preference-icon--moon { opacity: 1; transform: none; }
+.site-nav-trigger,
 .site-nav-icon--close, .site-nav-trigger[aria-expanded="true"] .site-nav-icon--menu { display: none; }
 .site-nav-trigger[aria-expanded="true"] .site-nav-icon--close { display: block; }
 .header-panel {
@@ -204,8 +200,8 @@ p, h1, h2, h3, figure, dl, dd { margin: 0; }
 }
 .header-panel[data-open] { display: block; }
 .header-panel-label { padding: .45rem .55rem .25rem; color: var(--quiet); font-size: .75rem; font-weight: 650; }
-.language-option, .theme-option { position: relative; cursor: pointer; }
-.language-option input, .theme-option input {
+.language-option { position: relative; cursor: pointer; }
+.language-option input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -233,24 +229,10 @@ p, h1, h2, h3, figure, dl, dd { margin: 0; }
   border-width: 0 2px 2px 0;
   transform: translateY(-2px) rotate(45deg);
 }
-.language-option:has(input:focus-visible), .theme-option:has(input:focus-visible) {
+.language-option:has(input:focus-visible) {
   outline: 2px solid var(--green);
   outline-offset: -2px;
 }
-.theme-panel { display: block; position: static; min-width: 0; padding: 0; border: 0; background: none; box-shadow: none; }
-.theme-panel .header-panel-label { display: none; }
-.theme-switcher { display: flex; gap: 1px; padding: 3px; border: 1px solid var(--rule-soft); border-radius: .55rem; }
-.theme-option {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 34px;
-  border-radius: .34rem;
-  color: var(--quiet);
-}
-.theme-option svg { width: 16px; height: 16px; }
-.theme-option:hover { color: var(--ink); background: var(--control-hover); }
-.theme-option:has(input:checked) { background: var(--ink); color: var(--paper); }
 
 @media (max-width: 44rem) {
   .header-inner { min-height: 56px; }
@@ -267,19 +249,7 @@ p, h1, h2, h3, figure, dl, dd { margin: 0; }
     box-shadow: 0 7px 24px rgb(18 14 8 / .16);
   }
   .site-nav a:focus-visible { outline-width: 2px; outline-offset: -2px; }
-  .site-nav-trigger, .theme-trigger { display: grid; }
-  .theme-panel {
-    display: none;
-    position: absolute;
-    min-width: 0;
-    padding: .3rem;
-    border: 1px solid var(--rule);
-    background: var(--paper);
-    box-shadow: 0 7px 24px rgb(18 14 8 / .16);
-  }
-  .theme-panel .header-panel-label { display: block; padding-block-start: .3rem; }
-  .theme-switcher { border: 0; }
-  .theme-option { width: 44px; height: 44px; }
+  .site-nav-trigger { display: grid; }
 }
 
 .hero {

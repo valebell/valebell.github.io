@@ -127,7 +127,8 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         const languageControl = document.querySelector('[data-site-language]');
-        const themeControl = document.querySelector('[data-site-theme]');
+        const themeToggle = document.querySelector('[data-site-theme]');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
         const bindings = Array.from(document.querySelectorAll('[data-i18n]'), textBinding);
         for (const attribute of ['aria-label', 'content', 'href', 'title']) {
             for (const element of document.querySelectorAll(`[data-i18n-${attribute}]`)) {
@@ -151,8 +152,16 @@
             document.dispatchEvent(new Event('maa:languagechange'));
         }
 
+        function isDarkTheme() {
+            return theme === 'dark' || (theme === 'system' && systemTheme.matches);
+        }
+
+        function updateThemeToggle() {
+            themeToggle.setAttribute('aria-pressed', String(isDarkTheme()));
+        }
+
         languageControl.querySelector(`input[value="${language}"]`).checked = true;
-        themeControl.querySelector(`input[value="${theme}"]`).checked = true;
+        updateThemeToggle();
         applyLanguage();
         setupHeader();
 
@@ -162,12 +171,14 @@
             applyLanguage();
         });
 
-        themeControl.addEventListener('change', (event) => {
-            theme = event.target.value;
+        themeToggle.addEventListener('click', () => {
+            theme = isDarkTheme() ? 'light' : 'dark';
             savePreference(themeKey, theme, 'system');
             applyTheme(theme);
+            updateThemeToggle();
         });
 
+        systemTheme.addEventListener('change', updateThemeToggle);
         window.addEventListener('languagechange', applyLanguage);
     }, { once: true });
 })();
