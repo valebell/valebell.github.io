@@ -77,11 +77,59 @@
         };
     }
 
+    function setupHeader() {
+        const header = document.querySelector('.site-header');
+        const mobile = window.matchMedia('(max-width: 44rem)');
+        let expanded = null;
+
+        function closePanel(returnFocus = false) {
+            if (!expanded) return;
+            const { trigger, panel } = expanded;
+            expanded = null;
+            trigger.setAttribute('aria-expanded', 'false');
+            panel.removeAttribute('data-open');
+            if (returnFocus) trigger.focus();
+        }
+
+        for (const trigger of header.querySelectorAll('[data-header-toggle]')) {
+            const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+            trigger.addEventListener('click', () => {
+                const wasOpen = expanded?.trigger === trigger;
+                closePanel();
+                if (wasOpen) return;
+                expanded = { trigger, panel };
+                trigger.setAttribute('aria-expanded', 'true');
+                panel.setAttribute('data-open', '');
+                panel.querySelector('input:checked, a[href]')?.focus();
+            });
+        }
+
+        function closeOnExit(event) {
+            if (expanded && !expanded.panel.contains(event.target) && !expanded.trigger.contains(event.target)) {
+                closePanel();
+            }
+        }
+
+        document.addEventListener('pointerdown', closeOnExit);
+        document.addEventListener('focusin', closeOnExit);
+        document.addEventListener('keydown', (event) => {
+            if (event.key !== 'Escape' || !expanded) return;
+            event.preventDefault();
+            closePanel(true);
+        });
+        header.querySelector('.site-nav').addEventListener('click', (event) => {
+            if (event.target.closest('a')) closePanel();
+        });
+        mobile.addEventListener('change', () => closePanel());
+        header.dataset.ready = '';
+        header.querySelector('.header-actions').hidden = false;
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         const languageControl = document.querySelector('[data-site-language]');
         const themeControl = document.querySelector('[data-site-theme]');
         const bindings = Array.from(document.querySelectorAll('[data-i18n]'), textBinding);
-        for (const attribute of ['aria-label', 'content', 'href']) {
+        for (const attribute of ['aria-label', 'content', 'href', 'title']) {
             for (const element of document.querySelectorAll(`[data-i18n-${attribute}]`)) {
                 bindings.push({
                     key: element.getAttribute(`data-i18n-${attribute}`),
@@ -103,19 +151,19 @@
             document.dispatchEvent(new Event('maa:languagechange'));
         }
 
-        languageControl.value = language;
-        themeControl.value = theme;
+        languageControl.querySelector(`input[value="${language}"]`).checked = true;
+        themeControl.querySelector(`input[value="${theme}"]`).checked = true;
         applyLanguage();
-        languageControl.closest('.site-preferences').hidden = false;
+        setupHeader();
 
-        languageControl.addEventListener('change', () => {
-            language = languageControl.value;
+        languageControl.addEventListener('change', (event) => {
+            language = event.target.value;
             savePreference(languageKey, language, 'auto');
             applyLanguage();
         });
 
-        themeControl.addEventListener('change', () => {
-            theme = themeControl.value;
+        themeControl.addEventListener('change', (event) => {
+            theme = event.target.value;
             savePreference(themeKey, theme, 'system');
             applyTheme(theme);
         });
