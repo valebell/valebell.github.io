@@ -34,6 +34,16 @@
         return 'en';
     }
 
+    function automaticLanguage() {
+        let timeZone;
+        try {
+            timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        } catch { /* Browser language is still available. */ }
+        if (timeZone === 'Europe/Paris') return 'fr';
+        if (timeZone === 'Asia/Tokyo' || timeZone === 'Japan') return 'ja';
+        return browserLanguage();
+    }
+
     function applyTheme(theme) {
         if (theme === 'system') delete root.dataset.theme;
         else root.dataset.theme = theme;
@@ -43,7 +53,7 @@
 
     let language = readPreference(languageKey, languages, 'auto');
     let theme = readPreference(themeKey, themes, 'system');
-    root.lang = language === 'auto' ? browserLanguage() : language;
+    root.lang = language === 'auto' ? automaticLanguage() : language;
     applyTheme(theme);
 
     function textBinding(element) {
@@ -83,7 +93,7 @@
 
         let displayedLanguage;
         function applyLanguage() {
-            const requested = language === 'auto' ? browserLanguage() : language;
+            const requested = language === 'auto' ? automaticLanguage() : language;
             const copy = window.maaSiteCopy?.[requested];
             const next = copy ? requested : 'en';
             if (next === displayedLanguage) return;

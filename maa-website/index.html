@@ -34,17 +34,24 @@
       </nav>
       <a class="header-cta" href="#availability"><span data-i18n="common.availability">Availability</span> <span aria-hidden="true">↓</span></a>
       <div class="site-preferences" hidden>
-        <select data-site-language aria-label="Language" data-i18n-aria-label="common.language">
-          <option value="auto" data-i18n="common.automaticLanguage">Browser language</option>
-          <option value="en" lang="en">English</option>
-          <option value="fr" lang="fr">Français</option>
-          <option value="ja" lang="ja">日本語</option>
-        </select>
-        <select data-site-theme aria-label="Appearance" data-i18n-aria-label="common.appearance">
-          <option value="system" data-i18n="common.systemTheme">System theme</option>
-          <option value="light" data-i18n="common.lightTheme">Light</option>
-          <option value="dark" data-i18n="common.darkTheme">Dark</option>
-        </select>
+        <span class="site-preference">
+          <svg class="preference-icon--globe" width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg#globe"></use></svg>
+          <select data-site-language aria-label="Language" data-i18n-aria-label="common.language">
+            <option value="auto" data-i18n="common.automaticLanguage">Automatic</option>
+            <option value="en" lang="en">English</option>
+            <option value="fr" lang="fr">Français</option>
+            <option value="ja" lang="ja">日本語</option>
+          </select>
+        </span>
+        <span class="site-preference">
+          <svg class="preference-icon--sun" width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg#sun"></use></svg>
+          <svg class="preference-icon--moon" width="18" height="18" aria-hidden="true"><use href="assets/site-icons.svg#moon"></use></svg>
+          <select data-site-theme aria-label="Appearance" data-i18n-aria-label="common.appearance">
+            <option value="system" data-i18n="common.systemTheme">System theme</option>
+            <option value="light" data-i18n="common.lightTheme">Light</option>
+            <option value="dark" data-i18n="common.darkTheme">Dark</option>
+          </select>
+        </span>
       </div>
     </div>
   </header>
